@@ -1,1 +1,34 @@
-<p>header works!</p>
+<!-- Header Component -->
+<header
+  class="w-full flex items-center justify-between fixed top-0 py-3 px-6 border-b z-10 border-edge-dark bg-card-dark text-txt-dark"
+>
+  <!-- Application's Logo -->
+  <div class="flex items-center justify-between">
+
+    <!-- Application Brand name -->
+    <div class="text-xl font-semibold">
+      <h3>
+        FyleFit Studio
+      </h3>
+    </div>
+  </div>
+
+  <!-- Menu Buttons -->
+  <ul class="flex items-center gap-3 font-light text-sm">
+    <li class="p-1">
+        <a routerLink="/">Home</a>
+    </li>
+    <li class="p-1">
+        <a routerLink="/explore">Explore</a>
+    </li>
+    <li class="p-1">
+      <a routerLink="/:id">Progress</a>
+  </li>
+  </ul>
+  <div class="flex justify-center items-center select-none px-3 py-1 rounded-lg border border-edge-dark cursor-pointer"
+  >
+    <a routerLink="/add-workout">
+      <span class="font-medium">Add Workout</span>
+    </a>
+  </div>
+</header>
