@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Observable, of } from 'rxjs';
 
 // Define the Workout and UserData interfaces
 export interface Workout {
@@ -52,6 +53,10 @@ export class WorkoutService {
     if (!localStorage.getItem('userData')) {
       this.saveUserData(this.initialData);
     }
+  }
+
+  getUserDataChart(): Observable<UserData[]> {
+    return of(this.initialData);
   }
 
   // Get user data from localStorage
