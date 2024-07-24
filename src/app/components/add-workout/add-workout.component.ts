@@ -1,5 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import {
+  FormControl,
+  FormGroup,
+  ReactiveFormsModule,
+  Validators,
+} from '@angular/forms';
 import { Router, RouterModule } from '@angular/router';
 import { WorkoutService } from '../../services/workout.service';
 
@@ -18,7 +23,7 @@ interface UserData {
   selector: 'app-add-workout',
   standalone: true,
   imports: [ReactiveFormsModule, RouterModule],
-  templateUrl: './add-workout.component.html'
+  templateUrl: './add-workout.component.html',
 })
 export class AddWorkoutComponent implements OnInit {
   workoutForm = new FormGroup({

@@ -14,8 +14,8 @@ export const routes: Routes = [
     component: AddWorkoutComponent,
   },
   {
-    path:'explore',
-    component:ExploreComponent
+    path: 'explore',
+    component: ExploreComponent
   },
   {
     // user route 

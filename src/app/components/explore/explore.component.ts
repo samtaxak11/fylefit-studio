@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { RouterLink } from '@angular/router';
-import { CommonModule } from '@angular/common'; // Import CommonModule for Angular structural directives
+import { CommonModule } from '@angular/common';
 import { WorkoutService, UserData, Workout } from '../../services/workout.service'; // Import WorkoutService and interfaces
 
 @Component({
@@ -20,7 +20,7 @@ export class ExploreComponent implements OnInit {
   currentPage = 1;
   itemsPerPage = 5;
 
-  constructor(private workoutService: WorkoutService) {}
+  constructor(private workoutService: WorkoutService) { }
 
   // Initialize component and fetch user data
   ngOnInit() {

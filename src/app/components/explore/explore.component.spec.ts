@@ -9,7 +9,7 @@ describe('ExploreComponent', () => {
   let component: ExploreComponent;
   let fixture: ComponentFixture<ExploreComponent>;
   let workoutService: jasmine.SpyObj<WorkoutService>;
-  
+
   // Mock user data to be used in the tests
   const mockUserData: UserData[] = [
     {

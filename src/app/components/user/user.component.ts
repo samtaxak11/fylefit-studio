@@ -24,7 +24,7 @@ export class UserComponent implements OnInit, OnDestroy {
   basicData: any;
   basicOptions: any;
 
-  constructor(private router: Router, private cdr: ChangeDetectorRef) {}
+  constructor(private router: Router, private cdr: ChangeDetectorRef) { }
 
   ngOnInit() {
     const username = this.router.url.split('/')[1];

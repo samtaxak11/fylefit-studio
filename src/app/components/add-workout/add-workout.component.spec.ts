@@ -13,8 +13,11 @@ describe('AddWorkoutComponent', () => {
   beforeEach(async () => {
     // Create spy objects for Router and WorkoutService
     mockRouter = jasmine.createSpyObj('Router', ['navigate']);
-    mockWorkoutService = jasmine.createSpyObj('WorkoutService', ['getUserData', 'addOrUpdateWorkout']);
-    
+    mockWorkoutService = jasmine.createSpyObj('WorkoutService', [
+      'getUserData',
+      'addOrUpdateWorkout',
+    ]);
+
     // Mock return value for getUserData method
     mockWorkoutService.getUserData.and.returnValue([
       {
@@ -22,9 +25,9 @@ describe('AddWorkoutComponent', () => {
         name: 'John Doe',
         workouts: [
           { type: 'Running', minutes: 30 },
-          { type: 'Cycling', minutes: 45 }
-        ]
-      }
+          { type: 'Cycling', minutes: 45 },
+        ],
+      },
     ]);
 
     // Configure testing module with necessary imports and providers
@@ -33,8 +36,8 @@ describe('AddWorkoutComponent', () => {
       imports: [ReactiveFormsModule],
       providers: [
         { provide: Router, useValue: mockRouter },
-        { provide: WorkoutService, useValue: mockWorkoutService }
-      ]
+        { provide: WorkoutService, useValue: mockWorkoutService },
+      ],
     }).compileComponents();
   });
 
@@ -67,9 +70,9 @@ describe('AddWorkoutComponent', () => {
         name: 'John Doe',
         workouts: [
           { type: 'Running', minutes: 30 },
-          { type: 'Cycling', minutes: 45 }
-        ]
-      }
+          { type: 'Cycling', minutes: 45 },
+        ],
+      },
     ]);
   });
 
@@ -90,10 +93,13 @@ describe('AddWorkoutComponent', () => {
 
     component.onSubmit();
 
-    expect(mockWorkoutService.addOrUpdateWorkout).toHaveBeenCalledWith('Jane Smith', {
-      type: 'Swimming',
-      minutes: 60
-    });
+    expect(mockWorkoutService.addOrUpdateWorkout).toHaveBeenCalledWith(
+      'Jane Smith',
+      {
+        type: 'Swimming',
+        minutes: 60,
+      }
+    );
     expect(mockRouter.navigate).toHaveBeenCalledWith(['/explore']);
   });
 });
